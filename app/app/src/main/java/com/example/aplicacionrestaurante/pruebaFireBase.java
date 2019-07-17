@@ -7,15 +7,10 @@ import android.widget.EditText;
 import com.firebase.client.Firebase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-//import butterknife.Bind;
-//import butterknife.ButterKnife;
 
 public class pruebaFireBase extends AppCompatActivity {
 
-    private String FIREBASE_URL = "https://restaurantemobileapp.firebaseio.com/";
-    private String FIREBASE_CHILD = "restaurantemobileapp";
-    private DatabaseReference mDatabase;// ..
-    Firebase firebase;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,16 +18,16 @@ public class pruebaFireBase extends AppCompatActivity {
         setContentView(R.layout.activity_prueba_fire_base);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        //ButterKnife.bind(this);
-        //Firebase.setAndroidContext(this);
-        //firebase = new Firebase(FIREBASE_URL).child(FIREBASE_CHILD);
     }
 
-    //@OnClick(R.id.botonTextoToFirebase)
-    public void escribirEnFireBase(View view){
-        EditText editText = (EditText)findViewById(R.id.textoToFireBase);
-        mDatabase.child("test").push().setValue(editText.getText().toString());
+    public void escribirEnFireBase(View view) {
+        Pedido p1 = new Pedido();
+        EditText editText = (EditText) findViewById(R.id.textoToFireBase);
+        p1.nombrePedido = editText.getText().toString();
+        p1.mesa = "1";
+        mDatabase.child("Pedidos").push().setValue(p1);
         editText.setText("");
     }
-
 }
+
+
