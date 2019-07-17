@@ -23,8 +23,8 @@ public class pruebaFireBase extends AppCompatActivity {
     public void escribirEnFireBase(View view) {
         Pedido p1 = new Pedido();
         EditText editText = (EditText) findViewById(R.id.textoToFireBase);
-        p1.nombrePedido = editText.getText().toString();
-        p1.mesa = "1";
+        p1.Mesa= editText.getText().toString();
+        p1.Estado = "En proceso";
         mDatabase.child("Pedidos").push().setValue(p1);
         editText.setText("");
     }

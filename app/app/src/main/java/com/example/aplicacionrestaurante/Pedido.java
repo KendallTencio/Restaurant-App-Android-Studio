@@ -1,6 +1,6 @@
 package com.example.aplicacionrestaurante;
 
 public class Pedido {
-    public String mesa;
-    public String nombrePedido;
+    public String Mesa;
+    public String Estado;
 }

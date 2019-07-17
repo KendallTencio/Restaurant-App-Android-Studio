@@ -12,4 +12,5 @@
     <string name="botonMesa3">3</string>
     <string name="botonAnadirMesa">+</string>
     <string name="botonEnviarTextoFireBase">Enviar a Firebase</string>
+    <string name="tituloVentanaPedidos">Pedidos</string>
 </resources>

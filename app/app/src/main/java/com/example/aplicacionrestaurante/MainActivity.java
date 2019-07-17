@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
     /** Se llama cuando se hace click al botón pedido */
     public void dirigirAPedidos(View view){
-        // Aquí se va a pedidos
+        Intent intent = new Intent(this, ventanaVisualizacionPedidos.class);
+        startActivity(intent);
     }
 
     /** Se llama cuando se hace click al botón mesas */
