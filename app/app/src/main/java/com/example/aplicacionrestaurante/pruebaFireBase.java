@@ -22,7 +22,7 @@ public class pruebaFireBase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prueba_fire_base);
 
-        mDatabase = FirebaseDatabase.getInstance().getReferenceFromUrl(FIREBASE_URL);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         //ButterKnife.bind(this);
         //Firebase.setAndroidContext(this);
         //firebase = new Firebase(FIREBASE_URL).child(FIREBASE_CHILD);
@@ -31,8 +31,7 @@ public class pruebaFireBase extends AppCompatActivity {
     //@OnClick(R.id.botonTextoToFirebase)
     public void escribirEnFireBase(View view){
         EditText editText = (EditText)findViewById(R.id.textoToFireBase);
-        mDatabase.child("FIREBASE_CHILD").setValue(editText.getText().toString());
-        //firebase.setValue(editText.getText().toString());
+        mDatabase.child("test").push().setValue(editText.getText().toString());
         editText.setText("");
     }
 
