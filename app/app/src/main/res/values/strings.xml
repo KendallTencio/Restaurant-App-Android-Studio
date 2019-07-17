@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AplicacionRestaurante</string>
+    <string name="tituloPrincipalTexto">Restaurante XYZ</string>
+    <string name="botonPedidosPrincipal">Pedidos</string>
+    <string name="botonMesasPrincipal">Mesas</string>
+    <string name="ingresoTextoPruebaName">IngresarTextoCualquiera</string>
+    <string name="botonDePruebaTexto">verOtraPestaña</string>
+    <string name="tituloPrincipalMesas">Mesas</string>
+    <string name="botonEnvioSocket">botonPruebaSocket</string>
+    <string name="botonMesa1">1</string>
+    <string name="botonMesa2">2</string>
+    <string name="botonMesa3">3</string>
+    <string name="botonAnadirMesa">+</string>
+    <string name="botonEnviarTextoFireBase">Enviar a Firebase</string>
+</resources>
