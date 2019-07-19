@@ -7,7 +7,7 @@ public class Pedido {
     public Pedido() {
     }
 
-    public Pedido(String estado, String mesa) {
+    public Pedido(String estado, String mesa, String idKey) {
         Estado = estado;
         Mesa = mesa;
     }

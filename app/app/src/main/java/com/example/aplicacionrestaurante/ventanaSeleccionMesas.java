@@ -13,10 +13,5 @@ public class ventanaSeleccionMesas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ventana_seleccion_mesas);
     }
-
-    /** Se llama al probar el firebase*/
-    public void crearMesaFireBase(View view){
-        Intent intent = new Intent(this, pruebaFireBase.class);
-        startActivity(intent);
-    }
+    
 }

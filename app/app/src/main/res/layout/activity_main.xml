@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/woodbackground"
+    android:onClick="acercaDe"
     tools:context=".MainActivity">
 
     <EditText
@@ -56,13 +58,11 @@
 
     <TextView
         android:id="@+id/tituloPrincipal"
-        android:layout_width="226dp"
-        android:layout_height="44dp"
+        android:layout_width="163dp"
+        android:layout_height="43dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:hint="@string/tituloPrincipalTexto"
         android:textColorHint="@android:color/black"
         android:textSize="30sp"
@@ -101,5 +101,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/verOtraPestaña1"
         tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/botonGenerarPedido"
+        android:layout_width="185dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:hint="@string/botonGenerarPedido"
+        android:onClick="generarPedidoFireBase"
+        android:textColorHint="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonMesas1" />
+
+    <Button
+        android:id="@+id/acercaDeMenuPrincipal"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:hint="@string/acercaDe"
+        android:onClick="acercaDe"
+        android:textColorHint="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonGenerarPedido" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.aplicacionrestaurante;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,18 @@ public class MyAdapter {
 
             mesa = (TextView) itemView.findViewById(R.id.itemPedido_Mesa);
             estado = (TextView) itemView.findViewById(R.id.itemPedido_Estado);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(mContext, detallesDePedido.class);
+                    intent.putExtra("llave",llave);
+                    intent.putExtra("estado",estado.getText().toString());
+                    intent.putExtra("mesa",mesa.getText().toString());
+
+                    mContext.startActivity(intent);
+                }
+            });
         }
 
         public void bind(Pedido pedido, String llave){

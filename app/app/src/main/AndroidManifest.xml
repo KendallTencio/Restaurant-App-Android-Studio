@@ -2,17 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.aplicacionrestaurante">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Restaurante App"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ventanaVisualizacionPedidos" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".pruebaFireBase" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".detallesDePedido"></activity>
+        <activity
+            android:name=".ventanaVisualizacionPedidos"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".pruebaFireBase"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ventanaSeleccionMesas"
             android:parentActivityName=".MainActivity" />

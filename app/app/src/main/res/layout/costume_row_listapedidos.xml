@@ -5,11 +5,24 @@
     android:layout_height="100dp">
 
     <TextView
+        android:id="@+id/tituloPedidoMesa"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="Mesa: " />
+
+    <TextView
         android:id="@+id/itemPedido_Mesa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="textView"
-        android:textAppearance="@android:style/TextAppearance.Large" />
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tituloPedidoEstado"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:text="Estado:" />
 
     <TextView
         android:id="@+id/itemPedido_Estado"

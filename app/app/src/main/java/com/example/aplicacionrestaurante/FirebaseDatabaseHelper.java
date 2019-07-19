@@ -2,6 +2,7 @@ package com.example.aplicacionrestaurante;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,5 +48,25 @@ public class FirebaseDatabaseHelper {
 
             }
         });
+    }
+
+    public void actualizarPedido(String llave, Pedido pedido, final EstadoDato estadoDato){
+        mReferencePedidos.child(llave).setValue(pedido).
+                addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                estadoDato.DatoActualizado();
+            }
+        });
+    }
+
+    public void borrarPedido(String llave, final EstadoDato estadoDato){
+        mReferencePedidos.child(llave).setValue(null)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        estadoDato.DatoBorrado();
+                    }
+                });
     }
 }
