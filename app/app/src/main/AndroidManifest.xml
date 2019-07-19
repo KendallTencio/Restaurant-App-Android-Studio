@@ -11,7 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".detallesDePedido"></activity>
+        <activity android:name=".ventanaConfiguraciones"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity
+            android:name=".realizarPedido"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".detallesDePedido"
+            android:parentActivityName=".ventanaVisualizacionPedidos" />
         <activity
             android:name=".ventanaVisualizacionPedidos"
             android:parentActivityName=".MainActivity" />
@@ -20,9 +29,6 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ventanaSeleccionMesas"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".DisplayMessageActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -16,4 +16,8 @@
     <string name="acercaDe">Acerca de</string>
     <string name="finalizarPedidoDetalles">Finalizar</string>
     <string name="limpiarPedidoDetalles">Limpiar</string>
+    <string name="tituloPrincipalRealizarPedido">Realizar pedido</string>
+    <string name="CompletarAccion">Listo</string>
+    <string name="mesaEtiqueta">Mesa:</string>
+    <string name="botonVersionApp">Versión</string>
 </resources>

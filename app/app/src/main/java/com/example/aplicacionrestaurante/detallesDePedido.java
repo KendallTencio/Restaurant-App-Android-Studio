@@ -62,6 +62,8 @@ public class detallesDePedido extends AppCompatActivity {
                     @Override
                     public void DatoActualizado() {
                         Toast.makeText(detallesDePedido.this, "Se ha finalizado el pedido", Toast.LENGTH_LONG).show();
+                        finish();
+                        return;
                     }
 
                     @Override

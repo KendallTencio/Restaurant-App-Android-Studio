@@ -32,4 +32,10 @@
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textSize="18sp" />
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@android:color/black" />
+
 </LinearLayout>
