@@ -4,9 +4,9 @@
     <string name="botonPedidosPrincipal">Pedidos</string>
     <string name="botonMesasPrincipal">Mesas</string>
     <string name="ingresoTextoPruebaName">IngresarTextoCualquiera</string>
-    <string name="botonDePruebaTexto">verOtraPestaña</string>
+    <string name="botonDePruebaTexto">Imprimir mensaje</string>
     <string name="tituloPrincipalMesas">Mesas</string>
-    <string name="botonEnvioSocket">botonPruebaSocket</string>
+    <string name="botonEnvioSocket">CrearMesaEnFireBase</string>
     <string name="botonMesa1">1</string>
     <string name="botonMesa2">2</string>
     <string name="botonMesa3">3</string>

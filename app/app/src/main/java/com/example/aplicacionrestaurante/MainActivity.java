@@ -55,12 +55,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /** Se llama al probar el firebase*/
-    public void dirigirAFireBasePrueba(View view){
-        Intent intent = new Intent(this, pruebaFireBase.class);
-        startActivity(intent);
-    }
-
     public void enviarTextoSocket(View view){
         mensajeSocket = e1.getText().toString();
 

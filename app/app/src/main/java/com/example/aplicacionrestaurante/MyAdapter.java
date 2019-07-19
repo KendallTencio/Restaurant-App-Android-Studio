@@ -7,90 +7,63 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    Context context;
-    String[] items;
+import java.util.List;
 
-    public MyAdapter(Context context, String[] items){
-        this.context = context;
-        this.items = items;
+public class MyAdapter {
+    private Context mContext;
+    private adaptadorRecyclerPedidos mAdaptadorPedido;
+    public void setConfig(RecyclerView recyclerView, Context context, List<Pedido> pedidos, List<String> llaves){
+        mContext = context;
+        mAdaptadorPedido = new adaptadorRecyclerPedidos(pedidos, llaves);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setAdapter(mAdaptadorPedido);
     }
 
+    public class adaptadorRecyclerPedidos extends RecyclerView.Adapter<Item> {
+        private List<Pedido> mListaPedidos;
+        private  List<String> mLlaves;
 
-    @NonNull
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View row = inflater.inflate(R.layout.costume_row_listapedidos, parent, false);
-        Item item = new Item(row);
-        return item;
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((Item)holder).textView.setText(items[position]);
-    }
-
-    @Override
-    public int getItemCount() {
-        return items.length;
-    }
-
-    public class Item extends RecyclerView.ViewHolder{
-        TextView textView;
-
-        public Item(@NonNull View itemView) {
-            super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.item);
+        public adaptadorRecyclerPedidos(List<Pedido> mListaPedidos, List<String> mLlaves) {
+            this.mListaPedidos = mListaPedidos;
+            this.mLlaves = mLlaves;
         }
-    }
-}
 
-/*private String[] mDataset;
+        @Override
+        public Item onCreateViewHolder(ViewGroup parent, int viewType) {
+            return new Item(parent);
+        }
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        // Cada item es un string, en este caso
-        public TextView textView;
-        public MyViewHolder(TextView v) {
-            super(v);
-            textView = v;
+        @Override
+        public void onBindViewHolder(Item holder, int position) {
+            holder.bind(mListaPedidos.get(position), mLlaves.get(position));
+        }
+
+        @Override
+        public int getItemCount() {
+            return mListaPedidos.size();
         }
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(String[] myDataset) {
-        mDataset = myDataset;
-    }
+    public class Item extends RecyclerView.ViewHolder {
+        private TextView mesa;
+        private TextView estado;
 
-    // Crea nuevas views (Invocado por el layout manager)
-    @Override
-    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Crea nuevas views
-        TextView v = (TextView) LayoutInflater.from(parent.getContext()).inflate(R.layout.my_text_view, parent, false);
+        private String llave;
 
-        MyViewHolder vh = new MyViewHolder(v);
-        return vh;
-    }
+        public Item(ViewGroup parent) {
+            super(LayoutInflater.from(mContext).inflate(R.layout.costume_row_listapedidos, parent, false));
 
-    // Reemplaza el contenido de una view(Invocado por el layout manager)
-    @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-        // - Obtiene el contenido del dataset en la posición dada
-        // - Reemplaza el contenido de la view con ese contenido
-        holder.textView.setText(mDataset[position]);
+            mesa = (TextView) itemView.findViewById(R.id.itemPedido_Mesa);
+            estado = (TextView) itemView.findViewById(R.id.itemPedido_Estado);
+        }
 
-    }
-
-    //Retorna el tamaño del dataset (Invocado por el layout manager)
-    @Override
-    public int getItemCount() {
-        return mDataset.length;
+        public void bind(Pedido pedido, String llave){
+            mesa.setText(pedido.getMesa());
+            estado.setText(pedido.getEstado());
+            this.llave = llave;
+        }
     }
 }
-
-*/

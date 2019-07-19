@@ -5,8 +5,18 @@
     android:layout_height="100dp">
 
     <TextView
+        android:id="@+id/itemPedido_Mesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="textView"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <TextView
+        android:id="@+id/itemPedido_Estado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="textView"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:id="@+id/item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textSize="18sp" />
+
 </LinearLayout>
